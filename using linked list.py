@@ -6,12 +6,16 @@ class TreeNode:
     
 NewBt= TreeNode("Drinks")
 left=TreeNode("Hot")
+tea=TreeNode("Tea")
+left.left=tea
+coffee=TreeNode("Coffee")
+left.right=coffee
 right=TreeNode("Cold")
 NewBt.left=left
 NewBt.right=right
 
 def preOrderTraversal(rootnode):
-    if rootnode is None:
+    if  not rootnode:
        return
     print(rootnode.value)
     preOrderTraversal(rootnode.left)
@@ -19,5 +23,20 @@ def preOrderTraversal(rootnode):
 
 preOrderTraversal(NewBt)
 
+def InOrderTraversal(rootnode):
+    if not rootnode :
+        return
+    InOrderTraversal(rootnode.left)
+    print(rootnode.value)
+    InOrderTraversal(rootnode.right)
 
+InOrderTraversal(NewBt)
 
+def PostOrderTraversal(rootnode):
+    if not rootnode:
+        return 
+    PostOrderTraversal(rootnode.left)
+    PostOrderTraversal(rootnode.right)
+    print(rootnode.value)
+
+print(PostOrderTraversal(NewBt))
