@@ -74,5 +74,45 @@ def SearchingNode(rootnode,node_value):
             return "Not found"
 
 print(SearchingNode(NewBt,"Drink"))
-            
+
+def insert_node(rootnode, nodevalue):
+    if not rootnode:
+        rootnode=nodevalue
+    else:
+        customqueue = Queue()
+        customqueue.Enqueue(rootnode)
+        while not(customqueue.isEmpty()):
+            root = customqueue.dequeue()
+            if root.left is not None:
+                customqueue.Enqueue(root.left)
+            else:
+                root.left = nodevalue  
+                return "Successful"
+            if root.right is not None:
+                customqueue.Enqueue(root.right)
+            else:
+                root.right = nodevalue  
+                return "Successful"
+
+nodevalue=TreeNode("Food")
+print(insert_node(NewBt,nodevalue))
+LevelOrderTraversal(NewBt)
+
+def deepest_node(rootnode):
+    if not rootnode:
+        return
+    else:
+        custom_queue=Queue()
+        custom_queue.Enqueue(rootnode)
+        while not(custom_queue.isEmpty()):
+            root = custom_queue.dequeue()
+            if root.left is not None:
+                custom_queue.Enqueue(root.left)
+            if root.right is not None:
+                custom_queue.Enqueue(root.right)
+        deepestnode=root.data
+        return deepestnode
+print(deepest_node(NewBt))
+        
+
         
