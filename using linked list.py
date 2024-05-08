@@ -56,4 +56,23 @@ def LevelOrderTraversal(rootnode):
             if(root.right is not None):
                 customqueue.Enqueue(root.right)
 LevelOrderTraversal(NewBt)
+
+def SearchingNode(rootnode,node_value):
+    if not rootnode:
+        return "BT does not exist"
+    else:
+        custom_queue=Queue()
+        custom_queue.Enqueue(rootnode)
+        while not(custom_queue.isEmpty()):
+            root= custom_queue.dequeue()
+            if root.data == node_value:
+                return "Success"
+            if(root.left is not None):
+                custom_queue.Enqueue(root.left)
+            if(root.right is not None):
+                custom_queue.Enqueue(root.right)
+            return "Not found"
+
+print(SearchingNode(NewBt,"Drink"))
+            
         
