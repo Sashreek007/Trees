@@ -151,6 +151,17 @@ insertNodeBT(newBT,food)
 levelOrderTraversal(newBT)
 deleteNodeBT(newBT,"Tea")
 levelOrderTraversal(newBT)
+
+def deleteBT(rootnode):
+    rootnode.data=None
+    rootnode.leftChild=None
+    rootnode.rightChild=None
+    return "Deleted"
+
+print(deleteBT(newBT))
+
+levelOrderTraversal(newBT)
         
+
 
         
