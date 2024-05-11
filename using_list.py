@@ -58,6 +58,9 @@ class BinaryTree:
                     self.customList[self.lastUsedIndex]=None
                     self.lastUsedIndex -= 1
                     return "Done"
+    
+    def delete_all(self):
+        self.customList=None
 
 
 
@@ -72,6 +75,7 @@ newBT.insert("Cold")
 newBT.insert("Tea")
 newBT.insert("Coffee")
 newBT.delete_node('Tea')
+newBT.delete_all()
 newBT.levelOrderTraversal(1)
 
 
