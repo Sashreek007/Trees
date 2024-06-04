@@ -45,7 +45,7 @@ def levelOrderTraversal(rootNode):
         customQueue.enqueue(rootNode)
         while not(customQueue.isEmpty()):
             root = customQueue.dequeue()
-            print(root.value.data)
+            print(root.value.data ,"..")
             if (root.value.leftChild is not None):
                 customQueue.enqueue(root.value.leftChild)
             
